@@ -29,11 +29,11 @@ int main()
     }
     //user input variables
     int num_cust;             //number of customer
-    int cart_items[10];       //number of cart items
-    string pack_choice[10];   //packing method
-    int number_pack[10];      //number of bags/boxs
-    string pay_method[10];   //paying method
-    string cash_value[10];   //cash value either exact or not exact
+    int cart_items[num_cust];      //number of cart items
+    string pack_choice[num_cust];   //packing method
+    int number_pack[num_cust];      //number of bags/boxs
+    string pay_method[num_cust];   //paying method
+    string cash_value[num_cust];   //cash value either exact or not exact
 
     //formula variables
     float Tdecart_Time=0.00;   //total decarting time
