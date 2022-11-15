@@ -1,0 +1,17 @@
+3
+11
+box
+1 
+digital
+
+3
+bag
+1
+cash
+e
+
+25
+box
+2
+cash
+ne
