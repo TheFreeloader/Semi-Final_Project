@@ -1,3 +1,4 @@
+//Sfinal c++ source code and sample run
 #include<iostream>
 #include<fstream>
 #include<string>
@@ -28,22 +29,22 @@ int main()
         exit(1);
     }
     //user input variables
-    int num_cust;             //number of customer
-    int cart_items[num_cust];      //number of cart items
-    string pack_choice[num_cust];   //packing method
-    int number_pack[num_cust];      //number of bags/boxs
-    string pay_method[num_cust];   //paying method
-    string cash_value[num_cust];   //cash value either exact or not exact
+    int num_cust;                 //number of customer
+    int cart_items[10];           //number of cart items
+    int number_pack[10];          //number of bags/boxs
+    string pack_choice[10];       //packing method
+    string pay_method[10];        //paying method
+    string cash_value[10];        //cash value either exact or not exact
 
     //formula variables
-    float Tdecart_Time=0.00;   //total decarting time
-    float Tscan_Time=0.00;     //total scan time
-    float Tpack_Time=0.00;     //total packing time
-    float Tpaying_Time=0.00;   // total paying time
-    float Tprint_Time=0.00;    //total printing time
-    float T_idleTime=0.00;     // total idle time
-    float Total_Queue_time=0.00; //total queue time
-    float Ftotal_Queue_time=0.00;// total lane time
+    float Tdecart_Time=0.00;      //total decarting time
+    float Tscan_Time=0.00;        //total scan time
+    float Tpack_Time=0.00;        //total packing time
+    float Tpaying_Time=0.00;      // total paying time
+    float Tprint_Time=0.00;       //total printing time
+    float T_idleTime=0.00;        // total idle time
+    float Total_Queue_time=0.00;  //total queue time
+    float Ftotal_Queue_time=0.00; // total lane time
 
 
 
@@ -60,6 +61,16 @@ int main()
                 fin>>cash_value[i];
             }
         }
+    }
+    cout<<num_cust<<endl;
+    for(int i=1;i<=num_cust;i++)
+    {
+        cout<<cart_items[i]<<" "<<pack_choice[i]<<" "<<number_pack[i]<<" "<<pay_method[i]<<" ";
+        if(pay_method[i]=="cash")
+        {
+            cout<<cash_value[i];
+        }
+        cout<<endl;
     }
 
     for(int i=1;i<=num_cust;i++)
@@ -122,9 +133,7 @@ int main()
         {
             Tpaying_Time = pay_byCard;
         }
-
         Tprint_Time = (cart_items[i] * receipt_print) + text_data;
-
         if(i<2)
         {
             T_idleTime = idleTime - 3;  
