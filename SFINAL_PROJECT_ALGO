@@ -1,0 +1,28 @@
+Semi-Final Project Algorithm
+
+Step 1: Start!
+Step 2: declare an fstream variable.
+Step 3: open up the file that holds the user inputs. check if its opening or not.
+Step 4: declare all given variables.
+Step 5: declare all user input variables.
+Step 6: declare all variables that will be used in making the formula.
+Step 7: take the size of the queue in the file.
+Step 8: make a loop with the size of the customer queue.
+Step 9: inside the loop take the users input(cart items, packaging method,
+number of package used, payment method) from the file.
+Step 10: make a new for loop with the size of queue in the file.
+Step 11: print out the receipt, display the customer number,cart items,packaging method, number of package and payment method.
+Step 12: Solve for Total decarting Time. Tdecart_Time = cart_items[i] * T_to_casher;
+Step 13: Solve for Total scan time. Tscan_Time = cart_items[i] * T_scanItems;
+Step 14: check if the packaging method is either a box or bag.
+if box is chosen solve for the pack time for the box.Tpack_Time = (cart_items[i] * T_toPack) + (number_pack[i] * pack_box); else Tpack_Time = (cart_items[i] * T_toPack) + (number_pack[i] * pack_bag);
+Step 15: check if the payment method is either cash or digital.
+if payment method is cash, check if the cash value is either a exact or not exact. if exact Tpaying_Time = exact; else Tpaying_Time = notExact; and if digital Tpaying_Time = pay_byCard;
+Step 16: Solve for the time for receipt printing. Tprint_Time = (cart_items[i] * receipt_print) + text_data;
+Step 17: check for the idle time. if the customer is the first customer there will no idle time, and if its  second or up there will be an idle time of 3.
+Step 18: Solve for the queue time for each customer. Total_Queue_time = Tdecart_Time + Tscan_Time + Tpack_Time + Tpaying_Time + Tprint_Time + T_idleTime;
+Step 19: print out the receipt
+Step 20: solve for the total queue time of all customers.
+Step 21: print out the value of total queue time.
+Step 22: close the file.
+Step 23: End!
