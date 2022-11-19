@@ -21,8 +21,11 @@ using namespace std;
 
 int main()
 {
+    
     ifstream fin;
+    //open up the file
     fin.open("SFinal.txt");
+    //check if the file is opened or not
     if(!fin.is_open())
     {
         cout<<"Cannot Open File"<<endl;
@@ -48,20 +51,22 @@ int main()
 
 
 
-    //take input from user on how many customers are in the queue
+    //take input from file on how many customers are in the queue
     fin>>num_cust;
-
-    //loop used to display the 3 customers
+    
+    //take the inputs of the customer in the file
     for(int i=1;i<=num_cust;i++)
     {
         fin>>cart_items[i]>>pack_choice[i]>>number_pack[i]>>pay_method[i];
         {
+            //check if the paymethod is cash exact or not exact
             if(pay_method[i]=="cash")
             {
                 fin>>cash_value[i];
             }
         }
     }
+    //loop used to display the 3 customers
     cout<<num_cust<<endl;
     for(int i=1;i<=num_cust;i++)
     {
@@ -73,9 +78,10 @@ int main()
         cout<<endl;
     }
 
+    // print out the reciept for each customer
     for(int i=1;i<=num_cust;i++)
     {
-        // print out the reciept
+        
         cout<<"======================================="<<endl;
         cout<<"------Customer Number:"<<i<<"------"<<endl;
         cout<<"Number of Cart Items: "<<cart_items[i]<<endl;
@@ -156,7 +162,10 @@ int main()
         cout<<"+++++++++++++++++++++++++++++++++++++++"<<endl;
         Ftotal_Queue_time+=Total_Queue_time;
     }
+    //print out the total queue time
     cout<<"Total Lane Queue Time: "<<Ftotal_Queue_time<<endl;
+    
+    //close the file
     fin.close();
 
     return 0;
